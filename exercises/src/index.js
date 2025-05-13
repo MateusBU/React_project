@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from 'react-dom/client'; //render the first element of the page
 
-import First from './components/first'
+        //First letter must be uppercase, because I created
+import First from './components/first';
+import GoodMorning from './components/goodMorning';
 
-const content = <h1>React</h1>; //react is used with .jsx
+const content = <GoodMorning name="Gui" age={25}/>; //react is used with .jsx
 
 const root = ReactDOM.createRoot(document.getElementById('root')); //talks with the page
 root.render(content);
