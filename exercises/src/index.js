@@ -14,8 +14,13 @@ import ReactDOM from 'react-dom/client'; //render the first element of the page
 // const content = <div><GoodAfternoon name="Ana"/> <Multi.GoodEvening name="Gui"/></div>
 
 //****COMPONENTS AS CLASS****///
-import Greeting from "./components/greetings";
-const content = <Greeting type="Good Morning" name="Jonas"/>; //these parameters are only readbly
+// import Greeting from "./components/greetings";
+// const content = <Greeting type="Good Morning" name="Jonas"/>; //these parameters are only readbly
+
+
+//****FATHER AND CHILDREN****///
+import Father from './components/father'
+const content = <div><Father name="Sergio" lastname="Silva"/> </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root')); //talks with the page
 root.render(content);
