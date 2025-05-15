@@ -1,13 +1,23 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
-import Children from './children';
+
+function childrenWithProps(props)
+{
+    return React.Children.map(props.children, child => {
+                return React.cloneElement(child, {
+                    ...props, ...child.props
+                })
+            })
+}
 
 export default props =>
     <div>
         <h1>{props.name} {props.lastname}</h1>
         <h2>Children</h2>
         <ul>
-            <Children name="Pedro" lastname={props.lastname} />
-            <Children {...props} /> {/*every properties goes to children */}
-            <Children {...props} name="Carla" /> {/*name Carla overwrites name from Father */}
+            {/*props.children*/} {/*if it was inside a class, it should be used this. */}
+            {
+                childrenWithProps(props)
+            }
         </ul>
     </div>

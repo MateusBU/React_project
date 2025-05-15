@@ -20,8 +20,18 @@ import ReactDOM from 'react-dom/client'; //render the first element of the page
 
 //****FATHER AND CHILDREN****///
 import Father from './components/father'
-const content = <div><Father name="Sergio" lastname="Silva"/> </div>
+import Children from './components/children'
 
+const content = 
+    <div>
+        <Father name="Sergio" lastname="Silva"> 
+            <Children name="Pedro"/>
+            <Children name="Sergio"/>
+            <Children name="Carla"/> 
+        </Father>
+    </div>
+/*every properties goes to children */
+/*name Carla overwrites name from Father */
 const root = ReactDOM.createRoot(document.getElementById('root')); //talks with the page
 root.render(content);
  //lauches <h1>..., inside the element of id root
